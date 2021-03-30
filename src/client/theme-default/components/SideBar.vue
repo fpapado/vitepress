@@ -1,5 +1,5 @@
 <template>
-  <aside class="sidebar" :class="{ open }">
+  <nav class="sidebar" :class="{ open }">
     <NavLinks class="nav" />
 
     <slot name="sidebar-top" />
@@ -7,7 +7,7 @@
     <SideBarLinks />
 
     <slot name="sidebar-bottom" />
-  </aside>
+  </nav>
 </template>
 
 <script setup lang="ts">

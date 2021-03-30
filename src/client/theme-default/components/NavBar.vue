@@ -1,14 +1,15 @@
 <template>
   <header class="nav-bar">
+    <!-- TODO: In principle, this entire section should be in a nav region -->
     <ToggleSideBarButton @toggle="$emit('toggle')" />
 
     <NavBarTitle />
 
     <div class="flex-grow" />
 
-    <div class="nav">
+    <nav class="nav">
       <NavLinks />
-    </div>
+    </nav>
 
     <slot name="search" />
   </header>

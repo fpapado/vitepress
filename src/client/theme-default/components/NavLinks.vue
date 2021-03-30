@@ -1,5 +1,5 @@
 <template>
-  <nav v-if="show" class="nav-links">
+  <div v-if="show" class="nav-links">
     <template v-if="links">
       <div v-for="item in links" :key="item.text" class="item">
         <NavDropdownLink v-if="item.items" :item="item" />
@@ -14,7 +14,7 @@
     <div v-if="repo" class="item">
       <NavLink :item="repo" />
     </div>
-  </nav>
+  </div>
 </template>
 
 <script setup lang="ts">
