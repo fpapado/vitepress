@@ -1,6 +1,6 @@
 <template>
   <div class="theme" :class="pageClasses">
-    <NavBar v-if="showNavbar" @toggle="toggleSidebar">
+    <NavBar v-if="showNavbar" @toggle="toggleSidebar" :open="openSideBar">
       <template #search>
         <slot name="navbar-search">
           <AlgoliaSearchBox v-if="theme.algolia" :options="theme.algolia" />

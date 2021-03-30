@@ -1,7 +1,7 @@
 <template>
-  <!-- TODO: Toggle aria-expanded correctly -->
   <button
     class="sidebar-button" 
+    :aria-expanded="open"
     @click="$emit('toggle')"
   >
     <svg
@@ -23,6 +23,9 @@
 
 <script>
 export default {
+  props: {
+    open: { type: Boolean, required: true }
+  },
   emits: ['toggle']
 }
 </script>

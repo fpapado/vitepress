@@ -1,7 +1,7 @@
 <template>
   <header class="nav-bar">
     <!-- TODO: In principle, this entire section should be in a nav region -->
-    <ToggleSideBarButton @toggle="$emit('toggle')" />
+    <ToggleSideBarButton @toggle="$emit('toggle')" :open="open" />
 
     <NavBarTitle />
 
@@ -16,12 +16,15 @@
 </template>
 
 <script setup lang="ts">
-import { defineEmit } from 'vue'
+import { defineEmit, defineProps } from 'vue'
 import NavBarTitle from './NavBarTitle.vue'
 import NavLinks from './NavLinks.vue'
 import ToggleSideBarButton from './ToggleSideBarButton.vue'
 
 defineEmit(['toggle'])
+defineProps({
+  open: { type: Boolean, required: true }
+})
 </script>
 
 <style scoped>
