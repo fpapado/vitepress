@@ -1,5 +1,13 @@
 <template>
-  <nav class="sidebar" :class="{ open }">
+  <!-- 
+    NOTE: the inert attribute correctly hides the sidebar from
+    assistive technologies, both as information and in the tab order.
+    This avoids users getting stuck on a hidden list of links when
+    the menu is shown but collapsed.
+    Because we animate the menu, we cannot hide it completely with
+    display: none, and thus must rely on inert instead.
+  -->
+  <nav class="sidebar" :class="{ open }" :inert="!open">
     <NavLinks class="nav" />
 
     <slot name="sidebar-top" />
