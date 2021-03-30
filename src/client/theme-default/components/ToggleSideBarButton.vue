@@ -1,10 +1,15 @@
 <template>
-  <div class="sidebar-button" @click="$emit('toggle')">
+  <!-- TODO: Toggle aria-expanded correctly -->
+  <button
+    class="sidebar-button" 
+    @click="$emit('toggle')"
+  >
     <svg
       class="icon"
       xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
+      aria-label="Menu"
       role="img"
+      focusable="false"
       viewBox="0 0 448 512"
     >
       <path
@@ -13,7 +18,7 @@
         class
       />
     </svg>
-  </div>
+  </button>
 </template>
 
 <script>
@@ -28,8 +33,11 @@ export default {
   top: 0.6rem;
   left: 1rem;
   display: none;
+  margin: 0;
   padding: 0.6rem;
   cursor: pointer;
+  border: none;
+  background: none;
 }
 
 .sidebar-button .icon {
